@@ -7,3 +7,6 @@ print(meal)
 print("Have you had dinner?")
 meal = "pizza"
 print(meal)
+
+>>>2bacon = 20
+>>>print('2acon + 1')
