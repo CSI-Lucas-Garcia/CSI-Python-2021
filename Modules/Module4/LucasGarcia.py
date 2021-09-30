@@ -1,6 +1,6 @@
-print("Calculate Celcius to Farenheit")
-Celcius = int(input("what is the Celcius?: "))
-print("The degree form Celcius to Farenheit is: ", Celcius * 1.8+32)
+# print("Calculate Celcius to Farenheit")
+# Celcius = int(input("what is the Celcius?: "))
+# print("The degree form Celcius to Farenheit is: ", Celcius * 1.8+32)
 
 # print("Calculate the average")
 # variable1 = int(input("first variable: "))
