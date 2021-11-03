@@ -17,10 +17,3 @@ import math
 
 # projectilefunction("M4A1", "5.56X45", "FMJ", 957, "Aquablue1", 85, 9.81)
 
-x = 2
-if x = 2:
-   print("x is equal to two.")
-elif x > 2 or x <= 5:
-   print("x is greater than two.")
-else:
-   print("x is less than two.")
