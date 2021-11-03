@@ -1,5 +1,6 @@
 import math 
-#  gun = "M4A1"
+from ExperimentalData import ExperimentalData
+# gun = "M4A1"
 # cartridge = "5.56X45mm"
 # ammunition = "FMJ"
 # velocity = 957
@@ -8,12 +9,28 @@ import math
 # BuildingHeight = 85
 
 # Gravity = 9.81
+# converting variables 
 
-# def projectilefunction(gun:str, catridge:str, ammunition:str, velocity:int, Building:str, BuildingHeight:int, Gravity:int):
-#     time_s = math.sqrt((2 * BuildingHeight) / Gravity) 
-#     Distance = (velocity * time_s)
+def projectilefunction(experimentalData: ExperimentalData):
+    time_s = math.sqrt((2 * BuildingHeight) / Gravity) 
 
-#     print(f"The gun i selected was {gun}. The {gun} has a catridge of {cartridge}. The {gun} is a {ammunition} weapon. The rate of fire of the {gun} is {velocity}. The buildin i selected is {Building}. It has a height of {BuildingHeight}.\n")
+   #  Distance = (ExperimentalData[velocity] * time_s)
+    Distance = (velocity * time_s)
 
-# projectilefunction("M4A1", "5.56X45", "FMJ", 957, "Aquablue1", 85, 9.81)
+    print(f"The gun i selected was {gun}. The {gun} has a catridge of {cartridge}. The {gun} is a {ammunition} weapon. The rate of fire of the {gun} is {velocity}. The buildin i selected is {Building}. It has a height of {BuildingHeight}.\n")
 
+# Convert to JSON object
+# experimentalData = {
+
+# "gun": "M4A1",
+# "cartridge": "5.56X45mm",
+# "ammunition": "FMJ",
+# "velocity": 957,
+# "Building": "Aquablue1",
+# "BuildingHeight": 85,
+# "Gravity": 9.81
+
+# }
+
+experimentalData = ExperimentalData("M4A1", "5.56X45", "FMJ", 957, "Aquablue1", 85, 9.81)
+projectilefunction(experimentalData)
