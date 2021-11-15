@@ -82,23 +82,52 @@ myObject = ExperimentData(**experimentJson)
 
 What does JSON Stand for?
 
- - Answer:
+ - Answer: JSON stands for: Java Script Object Notation
 
 Why are JSON formats important?
 
- - Answer:
+ - Answer: JSON formant is a way to store information in an organized, easy-to-access manner.
 
 Create an example of a JSON object with at least 4 values. It may represent anything but it must be original.
 
  - Answer:
+ class Person:
+  
+  def __init__(self,  name:str, height:str, age:int, profession: str):
+    self.name = name
+    self.height = height
+    self.age = age
+    self.profession = profession
+
+
+Person = [
+  Person("Lucas", 5.9, 15, "student"),
+  Person("Manuel", 6, 27, "teacher")
+]
+
+# Determine output Directory
+myOutputPath = Path(__file__).persons[0]
+myOutputFilePath = os.path.join(myOutputPath, 'person.json')
+
+# Serialization
+with open(myOutputFilePath, 'w') as outfile:
+  # For a single student seen above use: json.dump(s.__dict__, outfile)
+  # For loop will include all students in list.
+  json.dump([data.__dict__ for data in myDataSet], outfile)
+
+  file = open('ExperimentData.json',)
+experimentJson = json.load(file)
+
+myObject = ExperimentData(**experimentJson)
 
 What is the difference between serialization and deserialization?
 
- - Answer:
+ - Answer: Serialization means to convert an object into a string. Deserialization is to inverse the operation; from sting to object. 
 
 Research data persistance. What did you find?
 
- - Answer: 
+ - Answer: The dictionary definition of data persistance, means for an application to persist and retrieve information from a non-volatile storage system. It is important because the data survives after the process with which it was created has end. 
+
 
 Type down any class notes below this sentence:
 
