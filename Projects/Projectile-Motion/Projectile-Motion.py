@@ -19,9 +19,10 @@ def projectilefunction(experimentalData: ExperimentalData):
     g_ms2 = [3.7, 8.87, 9.81, 3.711, 24.79, 10.44, 8.69, 11.15]
 
     planet = planets.index(experimentalData.planet)
+    
     time_s = math.sqrt((2 * experimentalData.BuildingHeight) / g_ms2[planet]) 
     #  Distance = (ExperimentalData[velocity] * time_s)
-    Distance = (experimentalData.velocity * time_s)
+    distance = (experimentalData.velocity * time_s)
     
   # Parallel Lists
     
@@ -31,7 +32,7 @@ def projectilefunction(experimentalData: ExperimentalData):
 # Planet Gravity
    
 
-    print(f"The gun selected was {experimentalData.gun}. The {experimentalData.gun} has a catridge of {experimentalData.catridge}. The {experimentalData.gun} is a {experimentalData.ammunition} weapon. The rate of fire of the {experimentalData.gun} is the {experimentalData.velocity}. The building selected is {experimentalData.Building}. It has a height of {experimentalData.BuildingHeight}m. The bullet is going to travel {Distance} meters. It will travel this distance in {time_s}s. \n")
+    print(f"The gun selected was {experimentalData.gun}. The {experimentalData.gun} has a catridge of {experimentalData.catridge}. The {experimentalData.gun} is a {experimentalData.ammunition} weapon. The rate of fire of the {experimentalData.gun} is the {experimentalData.velocity}. The building selected is {experimentalData.Building}. It has a height of {experimentalData.BuildingHeight}m. The bullet is going to travel {distance} meters. It will travel this distance in {time_s}s. \n")
     print(f"The experiment is carried out in {experimentalData.planet} with a gravity of {g_ms2[planet]}")
 
 
@@ -47,10 +48,6 @@ def projectilefunction(experimentalData: ExperimentalData):
 # "Gravity": 9.81
 
 # }
- 
-
-
-
 
 # experimentalData = ExperimentalData("M4A1", "5.56X45mm", "FMJ", 957, "Aquablue1", 85, 9.81)
 
