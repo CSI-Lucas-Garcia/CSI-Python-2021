@@ -1,5 +1,5 @@
 import random 
-word_list = ["Santo", "Hombre","Ignacio","Servicioso","Honesto","Iglesia","Jerusalen","Hombre de armas","respeto","Sacerdote","Jesuita"]
+word_list = ["Santo", "Loyola","Ignacio","Servicioso","Honesto","Iglesia","Jerusalen","Hombre de armas","respeto","Sacerdote","Jesuita"]
 
 
 def get_word(word_list):
