@@ -1,8 +1,5 @@
-from ctypes.wintypes import WORD
-from curses.ascii import isalpha
 import random 
 word_list = ["Santo", "Loyola","Ignacio","Servicioso","Honesto","Iglesia","Jerusalen","Hombre de armas","respeto","Sacerdote","Jesuita"]
-
 
 def get_word(word_list):
     word = random.choice(word_list)
@@ -26,7 +23,7 @@ def play(word):
                 print("Ya trataste eso", guess, "!")
             elif guess not in word:
                 print(guess, "No es la palabra :(")     
-                tries -=1
+                tries -= 1
                 guessed_letters.append(guess)
             else:
                 print("Lo hiciste", guess, "esta en la palabra!")
@@ -53,96 +50,88 @@ def play(word):
         print(display_hangman(tries))
         print(word_completion)
         print("\n")
-
+    
     if guessed:
         print("Buen trabajo, pegaste la palabra!!! :)")
-    else: print("Lo siento, pero te quedaste sin tries. La palabra era", + WORD + "Para la prixima vez!")
+    else: 
+        print("Lo siento, pero te quedaste sin tries. La palabra era" + word + "Para la prixima vez!")
                 
     
-
-
-
 def display_hangman(tries):
-    
     stages = [ """
-  
-              _________________________
-              |                       | 
-              |                       |
-              |                       O
-              |                      /|\\ 
-              |                       |
-              |                      / \\
-                                   -
-                                    """,
-                                    """
-               _________________________
-              |                       | 
-              |                       |
-              |                       O
-              |                      /|\\ 
-              |                       |
-              |                      / 
-                                    -
-                                    """,
-                                    """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                       O
+                    |                      /|\\
+                    |                       |
+                    |                      / \\
+                    -
+                """,
+                """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                       O
+                    |                      /|\\ 
+                    |                       |
+                    |                      / 
+                    -
+                """,
+                """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                       O
+                    |                      /|\\ 
+                    |                       |
+                    |                      
+                    -
+                """,
+                """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                       O
+                    |                      /|
+                    |                       |
+                    |                      
+                    -
+                """,
+                """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                       O
+                    |                       |
+                    |                       |
+                    |                      
+                    -
+                """,
+                """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                       O
+                    |
+                    |
+                    |                      
+                    -
+                """,
+                """
+                    _________________________
+                    |                       | 
+                    |                       |
+                    |                      
+                    |                    
+                    |
+                    |
+                    -
+                """
 
-              _________________________
-              |                       | 
-              |                       |
-              |                       O
-              |                      /|\\ 
-              |                       |
-              |                      
-                                    -
-                                    """,
-                                    """
-
-
-               _________________________
-              |                       | 
-              |                       |
-              |                       O
-              |                      /|
-              |                       |
-              |                      
-                                    -
-                                    """,
-                                    """
-
-               _________________________
-              |                       | 
-              |                       |
-              |                       O
-              |                       |
-              |                       |
-              |                      
-                                    -
-                                    """,
-                                    """
-
-              _________________________
-              |                       | 
-              |                       |
-              |                       O
-              |                      
-                                    -
-                                    """,
-                                    """
-
-              _________________________
-              |                       | 
-              |                       |
-              |                      
-              |                    
-              |
-               
-                                    -
-                                    """,
-                            
-
-    ]
+        ]
     return stages[tries]
+
 def main():
     word = get_word
     play(word)
