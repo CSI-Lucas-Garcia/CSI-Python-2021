@@ -133,7 +133,7 @@ def display_hangman(tries):
     return stages[tries]
 
 def main():
-    word = get_word
+    word = get_word(word_list)
     play(word)
     while input("De nuevo? (Y/N)").upper() == "Y":
         word = get_word(word_list)
