@@ -1,5 +1,5 @@
 import random 
-word_list = ["Santo", "Loyola","Ignacio","Servicioso","Honesto","Iglesia","Jerusalen","Hombre de armas","respeto","Sacerdote","Jesuita"]
+word_list = ["Santo", "Loyola","Ignacio","Servicioso","Honesto","Iglesia","Jerusalen","Hombredearmas","respeto","Sacerdote","Jesuita"]
 
 def get_word(word_list):
     word = random.choice(word_list)
@@ -54,7 +54,7 @@ def play(word):
     if guessed:
         print("Buen trabajo, pegaste la palabra!!! :)")
     else: 
-        print("Lo siento, pero te quedaste sin tries. La palabra era" + word + "Para la prixima vez!")
+        print("Lo siento, pero te quedaste sin tries. La palabra era " + word + " Para la prixima vez!")
                 
     
 def display_hangman(tries):
