@@ -1,4 +1,6 @@
+from asyncore import loop
 from pickle import TRUE
+from turtle import update
 import pygame
 import time 
 pygame.init()
@@ -9,6 +11,8 @@ brown = (219, 149, 86) #snake
 green = (172, 254, 121) #background
 red = (255, 25, 1) #game over
 
+#width and height of game
+
 dis_width = 400
 dis_height = 300
 
@@ -17,15 +21,9 @@ dis=pygame.display.set_mode((dis_width,dis_height))
 pygame.display.set_caption("Snake game")
 game_over=False
 
-x1 = 200
-y1= 150
-
-x1_change = 0 
-y1_change = 0 
+# snake speed and how many blocks it equips
 snake_speed = 18
-
 snake_block = 10
-
 clock = pygame.time.Clock()
 
 font_style = pygame.font.SysFont(None,50)
@@ -34,7 +32,34 @@ def message(msg, color):
     mesg = font_style.render(msg, True, color)
     dis.blit(mesg, [dis_width/2, dis_height/2])
 
-while not game_over:
+def gameloop():
+    game_over = False
+    game_clone = False
+
+    x1 = dis_width/2
+    y1= dis_height/2
+
+    x1_change = 0 
+    y1_change = 0 
+
+#Play again
+    while not game_over:
+        while game_close == True:
+            dis.fill(green)
+            message("Game Over Press Q-Quit or P-Play Again", red)
+            pygame.display.update()
+
+            for event in pygame.event.get():
+                if event.type==pygame.KEYDOWN:
+                    if event.key == pygame.K_q:
+                        game_over = True
+                        game_close = False
+                    if event.key == pygame.K_p:
+                        gameloop()
+        
+    
+
+#movement of snake
     for event in pygame.event.get():
         if event.type==pygame.QUIT:
             game_over=TRUE
@@ -63,8 +88,7 @@ while not game_over:
     pygame.display.update()
 
     clock.tick(snake_speed)
-message("Game Over", red)
-pygame.display.update()
-time.sleep(5)
+
+
 pygame.quit()
 quit()
