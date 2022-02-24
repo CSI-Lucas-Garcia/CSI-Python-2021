@@ -17,8 +17,8 @@ dis=pygame.display.set_mode((dis_width,dis_height))
 pygame.display.set_caption("Snake game")
 game_over=False
 
-x1 = 150
-y1= 200
+x1 = 200
+y1= 150
 
 x1_change = 0 
 y1_change = 0 
