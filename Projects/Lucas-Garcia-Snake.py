@@ -23,7 +23,7 @@ pygame.display.set_caption("Snake game")
 game_over=False
 
 # snake speed and how many blocks it equips
-snake_speed = 18
+snake_speed = 14
 snake_block = 10
 clock = pygame.time.Clock()
 
@@ -116,7 +116,7 @@ def gameloop():
 
         my_snake(snake_block, snake_List)
         My_score(length_of_snake -1)
-        
+
         pygame.display.update()
 
 
