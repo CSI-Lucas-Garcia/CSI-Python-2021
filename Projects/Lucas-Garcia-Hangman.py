@@ -54,7 +54,7 @@ def play(word):
     if guessed:
         print("Buen trabajo, pegaste la palabra!!! :)")
     else: 
-        print("Lo siento, pero te quedaste sin tries. La palabra era " + word + " Para la prixima vez!")
+        print("Lo siento, pero te quedaste sin tries. La palabra era " + word + " Para la proxima vez!")
                 
     
 def display_hangman(tries):
